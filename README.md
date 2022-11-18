@@ -15,18 +15,29 @@ As I create this fork (Nov 2022):
 ## My Goals for This Project
 1. My first goal for this project was to port the existing (Nov 2022) Anycubic klipper-dgus solution to run on the CR6 DWIN T5L 272x480 displays, to restore some level of functionality to my CR6 DWIN display, while running Klipper. 
    - As of 7Nov22:
-     - I have achieved this goal (using Klipper-dgus_CR6_DWIN_SET_v0.7.zip)
+     - I have achieved this goal, by doing the following: 
+       - installed python-dgus per the online instructions, 
+       - re-sized all of the bitmap files from klipper-dgus to 272x480 pixels
+       - created a new project in DGUSTool 8.2.1.14, adding the resized images and importing the overlays from the klipper-dgus DWIN-SET folder
+       - edited the control and display objects to work with the new screens
+       - generated the new 32.icl,40.icl and 42.icl files
+       - saved and generated the new DWIN_SET 13, 14, and 22.bin files
+       - modified the CR6Community DWIN_SET file T5LCFG_272480.CFG to load the menu screens from 32.icl instead of 22.icl
+       - renamed the modified T5LCFG file to T5LCFG_272480K.CFG and copied that to the new DWIN_SET folder
+       - copied the CR6Community FONT file 0_DWIN_ASC.HZK to the new DWIN_SET folder (to ensure that the CR6Community Firmware font is the one used for all text messages displayed on the flashed screen (planning to modify the screen bitmaps to use that same font, in a future release)
+       - zipped the DWIN_SET file as Klipper-dgus_CR6_DWIN_SET_v0.7.zip to facilitate DWIN_SET downloads from GitHub
+       - extracted and flashed the DWIN_SET folder from Klipper-dgus_CR6_DWIN_SET_v0.7.zip to my CR6 display
      - I am also running KlipperScreen and Mainsail, to access controls and data still not available on the CR6 display
 
 2. My second goal is to use the ported display screens while printing on my CR6-SE, comparing the functionality with that of KlipperScreen and of the CR6Community Firmware, and noting any "user experience" issues that I have with the current system.
-   - This goal is currently process.
+   - This goal is currently in-process.
  
 3. My third goal is to understand the existing python-dgus library and klipper-dgus software architecture well enough to be able to modify and extend the functionality of the DWIN display screens in ways that remain consistent and compatible with the python-dgus library.
-    - This goal is currently in process.
+    - This goal is currently in-process.
   
 4. My fourth goal is to collaborate with Sebastian, when extending and/or deviating from his klipper-dgus design, to remain consistent and compatible with his python-dgus library (which is partly structured around the implemented structure and functionality of his klipper-dgus display screens)
-    - This goal is currently in process.
+    - This goal is currently in-process.
   
 5. My fifth goal is to learn enough about python programming, DGUS/DWIN serial communications, DWIN screen development, Moonraker API, Klipper Printer Objects, and Sphinx documentation, to be able to contribute valid and useful Pull Requests to the upstream python-dgus project.
-     - This goal is aspirational.  It is also in process...
+     - This goal is aspirational.  It is also in-process...
 
