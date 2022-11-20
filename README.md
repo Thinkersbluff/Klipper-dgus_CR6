@@ -1,5 +1,5 @@
 # klipper-dgus_CR6_from_Vyper
-A project to port my klipper-dgus_Vyper project fork to the CR6 DWIN T5L 272x480 display and extend/modify that project for my personal use.
+A project to port klipper-dgus to the CR6 DWIN T5L 272x480 display and extend/modify that project for my personal use.
 
 ## Background
 As I create this fork (Nov 2022):
