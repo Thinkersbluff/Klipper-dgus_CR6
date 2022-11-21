@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'klipper-dgus (DGUS Display for Klipper3D)'
-copyright = '2022, Sebastian Holzgreve'
-author = 'Sebastian Holzgreve'
+project = 'klipper-dgus_CR6 (DGUS Display for Klipper3D on Creality CR6 Printers)'
+copyright = '2022, Sebastian Holzgreve (original material) and Stephen P Jones (modifications only)'
+author = 'Sebastian Holzgreve (original material) and Stephen P Jones (modifications only)'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.7'
 
 
 # -- General configuration ---------------------------------------------------
@@ -58,3 +58,5 @@ html_static_path = ['_static']
 
 
 todo_include_todos = True
+
+plantuml = 'java -jar "/3D Objects/GitHubClones/Klipper-dgus_CR6/doc/utils/plantuml.jar"'

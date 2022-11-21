@@ -6,9 +6,5 @@ The Display Controll Application creates the link between Klipper, using the Moo
 
 .. uml::
 
-@startuml
-
-Moonraker <--> "Display Control Application" : Websocket\n(JSON-RPC)
-"Display Control Application" <--> "DGUS Display" : Serial Interface\n(python-dgus)
-
-@enduml
+    Moonraker <--> "Display Control Application" : Websocket\n(JSON-RPC)
+    "Display Control Application" <--> "DGUS Display" : Serial Interface\n(python-dgus)

@@ -9,6 +9,7 @@
    :maxdepth: 3
    :caption: Contents:
 
+   release_notes
    usage/usage_index
    development/development_index
    todo

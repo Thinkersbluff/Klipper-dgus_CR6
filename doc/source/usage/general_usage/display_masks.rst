@@ -28,10 +28,11 @@ Display Masks
     when klippy enters ready state.
 
     Features:
-    - Control Bed, Extruder Temperatur
+    - Control Bed, Extruder Temperature
     - Show Printtime and progress
     - Show actual postion of printhead
-    - Pause / Resume / Cancel Print
+    - Pause* / Resume* / Cancel Print*
+      (*these only work when "printing")
     end note
 
     MainMenu --> Homing
