@@ -1,9 +1,14 @@
-***********************************
-Install Display Control Application
-***********************************
+.. _Puthon_App_Installation_instructions_Label:
 
-Automatic Install Script
-========================
+**************************************************************
+Installing the Klipper-DGUS Python Display Control Application
+**************************************************************
+
+Using the Automatic Installation Script
+=======================================
+
+.. Warning:: The automated script may terminate before completing the installation, if it encounters problems. If the Display is stuck on an unresponsive Overview screen at the end of this installation, try performing the Manual Installation.
+
 For easy installation on `MainsailOS <https://docs.mainsail.xyz/setup/mainsail-os>`_ 
 a setup script named *install_for_mainsailos.sh* can be found in root of the project 
 folder.
@@ -30,8 +35,8 @@ change into the directory
 
 
 .. tip::
-    It happend multiple times in the past, that the serial port was not detected properly.
-    I recommend to remove all USB devices connected to the Klipper Hostmachine before setup.
+    Sometimes, the serial port may not be detected properly by this script.
+    If that happens, try removing all other USB devices connected to the Klipper Hostmachine, before setup.
 
     On the *Please disconnect USB-TTL used for DGUS Display...* just press enter.
 
@@ -49,7 +54,7 @@ And run the install script:
     it to your *printer.cfg*
 
 .. note::
-    During the installation will prompted for entering your sudo password.
+    During the installation, you will be prompted to enter your sudo password.
 
 
 .. _easy_install_script_installation:

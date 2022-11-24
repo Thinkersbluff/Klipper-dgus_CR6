@@ -1,24 +1,55 @@
 Release Notes
 =============
 
-The first functional release of the Klipper-dgus_CR6 project is v0.7.
+Version
+-------
+This first functional release of the Klipper-dgus_CR6 project is v0.7.
+
+
+New at this release
+-------------------
 
 The screens and functionality approximate those of the Klipper-dgus_Vyper DGUS application, with the following minor changes:
 
 1. The Z-Tilt function was removed, since that functionality is not available on the CR6.
 2. The slider controls were removed, since they did not operate correctly with touch on the 272x480 screen.
 3. Some control names were changed and some were rearranged, for aesthetic reasons.
+4. The Klipper message screen on the Startup page has also been copied to the Main Menu page.
+
+
+Known Issues at this release
+----------------------------
+
+1. The popup keyboard is not displaying the numbers that are typed-in. Data entry via the keyboard still works, though.
+2. The DWIN display's memory is not being "reset to zero" when Restart or FWRestart is used. As a result, some fields (like Target Temperatures) may report false information, until the system is made to refresh those values by being used. (e.g. By setting a new target temperature or by starting a print.)
+   This issue is also evident after using the Emergency Stop function and then restarting the firmware.
+3. Issue 2 can also result in Feed Amount and Feed Rate buttons being green even if they have not been selected, since the firmware was last started.
+   Always select the buttons you want activated. Do not assume they are already active, if not pressed since the last restart.
+4. The automatic installation script for klipper-dgus is not particularly "robust". If it is cancelled or crashes before completing, for instance, it will abort if you try to run it again.  Unless you can read and understand the logs, you may not realize that script has failed.  If the script fails to autodetect the serial interface to your TTL-USB device, for instance, then perform the Manual Installation instructions, as well.
+
+
+Installation Instructions
+-------------------------
 
 To install this application on a Creality CR6 printer:
 
 1. You must already be using Klipper to operate your CR6 printer.  Instructions for converting your printer from the (Marlin-based) stock Creality or Community Firmware to Klipper are beyond the scope of this documentation.
-2. Follow the klipper-dgus installation instructions in the Installation section of this document, including the instructions for establishing a serial communications link between your Klipper Host MCU containing Moonraker and your DWIN display. (The use of a TTL-USB adaptor is recommended, for ease of installation, but the GPIO serial interface can also be used.)
+
+2. Follow the :ref:`Flash_DWIN_SET_label` instructions in the Installation section of this document.
    - Use the version of DWIN_SET that is in the dgus-project folder of this project; Klipper-dgus_CR6_DWIN_SET_v0.7.zip. 
-3. Verify the installation as follows:
+
+3. Follow the :ref:`Puthon_App_Installation_instructions_Label` instructions in the Installation section of this document, including the instructions for establishing a serial communications link between your Klipper Host MCU containing Moonraker and your DWIN display. (The use of a TTL-USB adaptor is recommended, for ease of installation, but the GPIO serial interface can also be used.)
+
+4. Verify the installation as follows:
+
    a. With the printer off:
+
    Verify that the startup display appears on the screen, with an error message in the text box from Klipper saying that the printer mcu cannot be reached.
+
    b. With the printer on:
+
    Verify that the touchscreen operates the interface correctly, as follows:
+
    - tap the *FWrestart* button on the startup screen, to reboot Klipper and Moonraker
    - confirm that the Overview screen appears on the display
    - select *<* to access the Main Menu screen

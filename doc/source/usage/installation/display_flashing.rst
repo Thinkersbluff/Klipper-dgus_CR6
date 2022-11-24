@@ -2,7 +2,12 @@
 Display Flashing
 ****************
 
-A ready to flash display application (*DWIN_SET* folder) can be found in *dgus_project* folder.
+.. _Flash_DWIN_SET_label:
+
+Flashing DWIN_SET to the DWIN Display Hardware
+----------------------------------------------
+
+A ready-to-flash display application (*DWIN_SET* folder) can be found in *dgus_project* folder.
 
 Prepare MicroSD Card
 ====================
