@@ -3,7 +3,7 @@ Klipper-DGUS Config Files
 #########################
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Existing config Files:
 
    serial_config_json

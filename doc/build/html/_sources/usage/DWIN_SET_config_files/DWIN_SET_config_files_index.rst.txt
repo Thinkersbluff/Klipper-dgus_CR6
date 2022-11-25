@@ -8,3 +8,10 @@ DWIN_SET Config Files
 
    T5LCFG_272480K.CFG
    0_DWIN_ASC.HZK
+   22_Config.BIN
+   13TouchFile.BIN
+   14ShowFile.BIN
+   32.icl
+   40.icl
+
+#   42.icl
