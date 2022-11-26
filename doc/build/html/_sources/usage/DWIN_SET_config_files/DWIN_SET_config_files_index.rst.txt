@@ -1,3 +1,5 @@
+.. _DWIN_SET_Config_Files_label:
+
 #####################
 DWIN_SET Config Files
 #####################
@@ -13,5 +15,3 @@ DWIN_SET Config Files
    14ShowFile.BIN
    32.icl
    40.icl
-
-#   42.icl
