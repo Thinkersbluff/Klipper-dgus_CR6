@@ -3,29 +3,23 @@ Release Notes
 
 Version
 -------
-This first functional release of the Klipper-dgus_CR6 project is v0.7.
+This is release v0.7.1 of the Klipper-dgus_CR6 project.
 
 
 New at this release
 -------------------
 
-The screens and functionality approximate those of the Klipper-dgus_Vyper DGUS application, with the following minor changes:
-
-1. The Z-Tilt function was removed, since that functionality is not available on the CR6.
-2. The slider controls were removed, since they did not operate correctly with touch on the 272x480 screen.
-3. Some control names were changed and some were rearranged, for aesthetic reasons.
-4. The Klipper message screen on the Startup page has also been copied to the Main Menu page.
+The popup keyboard has been repaired. It now displays the numbers as you enter them.
 
 
 Known Issues at this release
 ----------------------------
 
-1. The popup keyboard is not displaying the numbers that are typed-in. Data entry via the keyboard still works, though.
-2. The DWIN display's memory is not being "reset to zero" when Restart or FWRestart is used. As a result, some fields (like Target Temperatures) may report false information, until the system is made to refresh those values by being used. (e.g. By setting a new target temperature or by starting a print.)
+1. The DWIN display's memory is not being "reset to zero" when Restart or FWRestart is used. As a result, some fields (like Target Temperatures) may report false information, until the system is made to refresh those values by being used. (e.g. By setting a new target temperature or by starting a print.)
    This issue is also evident after using the Emergency Stop function and then restarting the firmware.
-3. Issue 2 can also result in Feed Amount and Feed Rate buttons being green even if they have not been selected, since the firmware was last started.
+2. Issue 1 can also result in Feed Amount and Feed Rate buttons being green even if they have not been selected, since the firmware was last started.
    Always select the buttons you want activated. Do not assume they are already active, if not pressed since the last restart.
-4. The automatic installation script for klipper-dgus is not particularly "robust". If it is cancelled or crashes before completing, for instance, it will abort if you try to run it again.  Unless you can read and understand the logs, you may not realize that script has failed.  If the script fails to autodetect the serial interface to your TTL-USB device, for instance, then perform the Manual Installation instructions, as well.
+3. The automatic installation script for klipper-dgus is not particularly "robust". If it is cancelled or crashes before completing, for instance, it will abort if you try to run it again.  Unless you can read and understand the logs, you may not realize that script has failed.  If the script fails to autodetect the serial interface to your TTL-USB device, for instance, then perform the Manual Installation instructions, as well.
 
 
 Installation Instructions
@@ -64,4 +58,4 @@ If you still have trouble, please review the Issues in the project repository, f
 If there is no exising Issue that describes your problem, please open a new Issue and provide enough information for us to be able to understand and reproduce your problem.
 
 Good luck and enjoy!
-SPJones, 19Nov2022 
+SPJones, 30Nov2022 

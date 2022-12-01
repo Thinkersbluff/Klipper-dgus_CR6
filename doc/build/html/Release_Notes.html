@@ -81,25 +81,18 @@
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading"></a></h1>
 <section id="version">
 <h2>Version<a class="headerlink" href="#version" title="Permalink to this heading"></a></h2>
-<p>This first functional release of the Klipper-dgus_CR6 project is v0.7.</p>
+<p>This is release v0.7.1 of the Klipper-dgus_CR6 project.</p>
 </section>
 <section id="new-at-this-release">
 <h2>New at this release<a class="headerlink" href="#new-at-this-release" title="Permalink to this heading"></a></h2>
-<p>The screens and functionality approximate those of the Klipper-dgus_Vyper DGUS application, with the following minor changes:</p>
-<ol class="arabic simple">
-<li><p>The Z-Tilt function was removed, since that functionality is not available on the CR6.</p></li>
-<li><p>The slider controls were removed, since they did not operate correctly with touch on the 272x480 screen.</p></li>
-<li><p>Some control names were changed and some were rearranged, for aesthetic reasons.</p></li>
-<li><p>The Klipper message screen on the Startup page has also been copied to the Main Menu page.</p></li>
-</ol>
+<p>The popup keyboard has been repaired. It now displays the numbers as you enter them.</p>
 </section>
 <section id="known-issues-at-this-release">
 <h2>Known Issues at this release<a class="headerlink" href="#known-issues-at-this-release" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>The popup keyboard is not displaying the numbers that are typed-in. Data entry via the keyboard still works, though.</p></li>
 <li><p>The DWIN display’s memory is not being “reset to zero” when Restart or FWRestart is used. As a result, some fields (like Target Temperatures) may report false information, until the system is made to refresh those values by being used. (e.g. By setting a new target temperature or by starting a print.)
 This issue is also evident after using the Emergency Stop function and then restarting the firmware.</p></li>
-<li><p>Issue 2 can also result in Feed Amount and Feed Rate buttons being green even if they have not been selected, since the firmware was last started.
+<li><p>Issue 1 can also result in Feed Amount and Feed Rate buttons being green even if they have not been selected, since the firmware was last started.
 Always select the buttons you want activated. Do not assume they are already active, if not pressed since the last restart.</p></li>
 <li><p>The automatic installation script for klipper-dgus is not particularly “robust”. If it is cancelled or crashes before completing, for instance, it will abort if you try to run it again.  Unless you can read and understand the logs, you may not realize that script has failed.  If the script fails to autodetect the serial interface to your TTL-USB device, for instance, then perform the Manual Installation instructions, as well.</p></li>
 </ol>
@@ -136,7 +129,7 @@ Always select the buttons you want activated. Do not assume they are already act
 If you still have trouble, please review the Issues in the project repository, for similar-sounding problems.</p>
 <p>If there is no exising Issue that describes your problem, please open a new Issue and provide enough information for us to be able to understand and reproduce your problem.</p>
 <p>Good luck and enjoy!
-SPJones, 19Nov2022</p>
+SPJones, 30Nov2022</p>
 </section>
 </section>
 
