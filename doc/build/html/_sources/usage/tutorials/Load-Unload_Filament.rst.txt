@@ -85,6 +85,7 @@ Tutorial Steps:
    :align: center
    :alt: Picture Highlighting the "Posn 2" button on the Homing menu 
 
+
 8. Wait for the printer to home X,Y,Z and then to park the head at X=0,Y=0,Z=20.
 
 .. TIP:: The macro codes run by buttons Posn1 and Posn2 are user-programmable.
@@ -94,6 +95,8 @@ Tutorial Steps:
 
 .. Figure:: ../../img/tutorials/Load-Unload_Filament/45DegTip.JPG
    :scale: 20
+   :align: center
+   :alt: Picture of filament with 45 degree tip cut at end
 
 11. Feed the filament into the extruder, and up to the point where it meets resistance (i.e. at the point where the extruder will grab the filament and feed it forward, when "Load" is selected.).
 12. Return to the Main Menu screen.
