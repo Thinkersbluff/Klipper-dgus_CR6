@@ -14,10 +14,3 @@
    development/development_index
    todo
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -22,10 +22,16 @@ Tools
 Display Control Application
 ---------------------------
 
-The python sources are developed in Visual Studio Code.
+The python sources are developed and maintained in Visual Studio Code.
 
 
 DGUS Display Application
 ------------------------
 
-The Display Application is with the DGUS Tool v8.2.1.14
+The Display Application is developed and maintained with the DGUS Tool v8.2.1.14
+
+
+Documentation
+-------------
+
+This documentation is developed and maintained using Sphinx and Restructured Text, with the help of the RTD (Read The Docs) template and two Sphinx extensions: sphinxcontrib.plantuml and sphinx.ext.todo.

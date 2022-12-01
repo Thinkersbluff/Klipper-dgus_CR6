@@ -20,6 +20,8 @@ The initial set of screens bundled with this project were rescaled from the klip
 
 This project documentation is an adaptation and extension of the documentation provided with klipper-dgus, tailored to document this Klipper-dgus_CR6 project.
 
+The latest release of klipper-dgus_CR6 DWIN_SET can be downloaded from `here <https://github.com/Thinkersbluff/Klipper-dgus_CR6/releases>`_
+Prior releases are also available, there, each with the matching version of this evolving documentation.
 
 .. warning:: 
     This project is still under development.
