@@ -3,13 +3,14 @@ Release Notes
 
 Version
 -------
-This is release v0.7.1 of the Klipper-dgus_CR6 project.
+This is release v0.7.2 of the Klipper-dgus_CR6 project.
 
 
 New at this release
 -------------------
 
 The popup keyboard has been repaired. It now displays the numbers as you enter them.
+The wrong version of the DGUS Project files were uploaded at release 0.7.1. (Sorry)
 
 
 Known Issues at this release
