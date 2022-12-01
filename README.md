@@ -15,7 +15,7 @@ As I create this fork (Nov 2022):
 ## My Goals for This Project
 1. My first goal for this project was to port the existing (Nov 2022) Anycubic klipper-dgus solution to run on the CR6 DWIN T5L 272x480 displays, to restore some level of functionality to my CR6 DWIN display, while running Klipper. 
    - As of 7Nov22:
-     - I have achieved this goal, by doing the following: 
+     - I achieved this goal, by doing the following: 
        - installed python-dgus per the online instructions, 
        - re-sized all of the bitmap files from klipper-dgus to 272x480 pixels
        - created a new project in DGUSTool 8.2.1.14, adding the resized images and importing the overlays from the klipper-dgus DWIN-SET folder
