@@ -14,6 +14,9 @@
  # You should have received a copy of the GNU General Public License 
  # along with this program. If not, see <http://www.gnu.org/licenses/>.
  #
+ # NOTE:In the Vyper version of Klipper-DGUS, screen 51 displays which axis/axes have been homed, so far 
+ # Hence the need for the python code below.  That info display was deleted from the CR6 version, at v0.7.x.
+ #
 
 from dgus.display.mask import Mask
 from dgus.display.communication.communication_interface import SerialCommunication

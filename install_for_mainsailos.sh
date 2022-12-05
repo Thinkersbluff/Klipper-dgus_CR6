@@ -4,9 +4,9 @@ echo "#####################################"
 echo "DGUS for Klipper (MainsailOS Install)"
 echo "#####################################"
 
-#Check that script is exectuted in klipper-dgus folder
+#Check that script is executed in klipper-dgus folder
 if [ "${0%/*}" != "." ]
-    then echo "The script needs to be runned from 'klipper-dgus' folder"
+    then echo "This script needs to be run from 'klipper-dgus' folder"
     exit
 fi
 
@@ -60,7 +60,7 @@ echo -e "\nStarting initial configuration"
 echo -e "\n"
 python3 src/config_edit.py -c $conf_dir
 
-echo -e "\nDisplay should be available in arround 15 seconds"
+echo -e "\nDisplay should be available in around 15 seconds"
 sudo systemctl start klipper_dgus
 
 exit

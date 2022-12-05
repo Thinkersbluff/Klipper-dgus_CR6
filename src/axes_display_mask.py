@@ -46,17 +46,14 @@ class AxesDisplayMask(Mask):
         self.display = display
 
         self.xpos = MoonrakerDataVariable(self._com_interface, DataAddress.LIVE_X_POS, 2, DataAddress.UNDEFINED, self.web_socket)
-        #self.xpos.set_klipper_data(["toolhead", "position"], 0)
         self.xpos.set_klipper_data(["motion_report", "live_position"], 0)
         self.controls.append(self.xpos)
 
         self.ypos = MoonrakerDataVariable(self._com_interface, DataAddress.LIVE_Y_POS, 2, DataAddress.UNDEFINED, self.web_socket)
-        #self.ypos.set_klipper_data(["toolhead", "position"], 1)
         self.ypos.set_klipper_data(["motion_report", "live_position"], 1)
         self.controls.append(self.ypos)
 
         self.zpos = MoonrakerDataVariable(self._com_interface, DataAddress.LIVE_Z_POS, 2, DataAddress.UNDEFINED, self.web_socket)
-        #self.zpos.set_klipper_data(["toolhead", "position"], 2)
         self.zpos.set_klipper_data(["motion_report", "live_position"], 2)
         self.controls.append(self.zpos)
 
@@ -96,7 +93,7 @@ class AxesDisplayMask(Mask):
         response_payload = data[7:]
         keycode = int.from_bytes(response_payload, byteorder='big')
 
-        #print(f'keycode: {keycode}')
+        #print(f'keycode: {keycode}')  #Uncomment this line to log key presses?
 
         if self.is_keycode_a_move_key(keycode):
             self.perform_move(keycode)
@@ -104,16 +101,16 @@ class AxesDisplayMask(Mask):
         if self.is_keycode_a_home_key(keycode):
             self.perform_homing()
 
-        if keycode == KeyCodes.Z_TILT:
+        if keycode == KeyCodes.Z_TILT:  #NB: Z_TILT not available for CR6 - two motors but only one Z driver
             self.logger.debug("Z-Tilt pressed...")
             self.perform_z_tilt()
 
 
-        if keycode == KeyCodes.USER_POS1:
+        if keycode == KeyCodes.USER_POS1:  #NB: Define macro USER_POS1 in the dgus.display.macros.cfg file
             self.logger.debug("User POS1 pressed...")
             self.perform_user_pos(1)
 
-        if keycode == KeyCodes.USER_POS2:
+        if keycode == KeyCodes.USER_POS2:  #NB: Define macro USER_POS2 in the dgus.display.macros.cfg file
             self.logger.debug("User POS2 pressed...")
             self.perform_user_pos(2)
 
@@ -185,7 +182,7 @@ class AxesDisplayMask(Mask):
             "jsonrpc": "2.0",
             "method": "printer.gcode.script",
             "params": {
-                "script": 'M18 X Y Z\n G28',
+                "script": 'M18 X Y Z\n G28',    #NB: The disable motors command here is used to force Klipper to "forget" that the axes have been homed, so that it will again report on screen 51 each axis being homed, as the homing progresses. That display was deleted from the CR6 version.
                                 
             },
             "id": WebsocktRequestId.TURN_MOTORS_OFF_CMD
