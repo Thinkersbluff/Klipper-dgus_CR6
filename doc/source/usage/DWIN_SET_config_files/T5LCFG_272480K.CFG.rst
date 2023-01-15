@@ -1,10 +1,10 @@
-.. _T5LCFG_22480K.CFG:
+.. _T5LCFG_272480K.CFG:
 
 *****************
-T5LCFG_22480K.CFG
+T5LCFG_272480K.CFG
 *****************
 
-The file T5LCFG_22480K.CFG in the DWIN_SET folder is a DWIN display configuration file.
+The file T5LCFG_272480K.CFG in the DWIN_SET folder is a DWIN display configuration file.
 
 The contents of this file are coded in hexadecimal, according to the instructions given in section 4 of the DGSUII T5L Application development document, a copy of which can be downloaded from the CR6Community/Touchscreen GitHub repository, :download:`here
 <https://github.com/CR6Community/CR-6-touchscreen/raw/extui/doc/vendor/T5L_DGUSII%20Application%20Development%20Guide20200902.pdf>`

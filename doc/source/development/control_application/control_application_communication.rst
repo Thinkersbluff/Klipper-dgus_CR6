@@ -2,7 +2,7 @@
 
 Display Application Communication
 =================================
-The Display Controll Application creates the link between Klipper, using the Moonraker JSON RPC API, and the DGUS Display.
+The Display Control Application creates the link between Klipper and the DGUS Display, using the Moonraker JSON RPC API.
 
 .. uml::
 
