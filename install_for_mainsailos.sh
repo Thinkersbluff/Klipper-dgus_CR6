@@ -6,7 +6,7 @@ echo "#####################################"
 
 #Check that script is exectuted in klipper-dgus folder
 if [ "${0%/*}" != "." ]
-    then echo "The script needs to be runned from 'klipper-dgus' folder"
+    then echo "The script needs to be run from within the 'klipper-dgus' folder"
     exit
 fi
 
