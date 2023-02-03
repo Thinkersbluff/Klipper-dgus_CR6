@@ -46,13 +46,14 @@ from dgus.display.communication.communication_interface import SerialCommunicati
 from dgus.display.display import Display
 from dgus.display.mask import Mask
 
-
+# Each displayable screen in the DWIN_SET app must have an associated "display mask"
+# Each display mask must in-turn name the controls and variables it wishes to use
 from overview_display_mask import OverviewDisplayMask
 from axes_display_mask import AxesDisplayMask
-from homeing_mask import HomeingDisplayMask
+from homing_mask import HomingDisplayMask
 from tuning_mask import TuningMask
 from extruder_mask import ExtruderMask
-from extruder_temp_to_low_mask import ExtruderTemperatureToLowMask
+from extruder_temp_too_low_mask import ExtruderTemperatureTooLowMask
 from fan_display_mask import FanMask
 from startup_mask import StartupMask
 
@@ -84,11 +85,16 @@ if __name__ == "__main__":
     
     logger.info("Using config directory: %s", config_dir)
 
+    # These two parameters define the Moonraker API endpoint address & port
+    #TODO convert this fixed IP address and Port number into MoonrakerWebsocketInterface values named in the printer.cfg file, in a [klipper-dgus] section?
     PRINTER_IP = "10.0.1.69"
     PORT = 7125
+    # This line passes the Moonraker API endpoint address to the WebsocketInterface method
     websock = WebsocketInterface(PRINTER_IP, PORT)
 
+    # This parameter identifies the serial interface through which the host SBC communicates directly with the DWIN display
     SERIAL_PORT = "/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0"
+    # This line passes the display/host serial interface id to the SerialCommunication method
     serial_com = SerialCommunication(SERIAL_PORT)
 
     
@@ -149,11 +155,11 @@ if __name__ == "__main__":
     fanMask = FanMask(serial_com, websock)
     display.add_mask(fanMask)
 
-    homeingInProgress = HomeingDisplayMask(51, serial_com, websock)
-    display.add_mask(homeingInProgress)
+    homingInProgress = HomingDisplayMask(51, serial_com, websock)
+    display.add_mask(homingInProgress)
 
-    extruder_temp_to_low_mask = ExtruderTemperatureToLowMask(serial_com, websock)
-    display.add_mask(extruder_temp_to_low_mask)
+    extruder_temp_too_low_mask = ExtruderTemperatureTooLowMask(serial_com, websock)
+    display.add_mask(extruder_temp_too_low_mask)
 
 
     if serial_com.start_com_thread():

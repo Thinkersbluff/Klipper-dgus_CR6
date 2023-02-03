@@ -4,7 +4,7 @@ from controls.moonraker_data_variable import MoonrakerDataVariable
 from data_addresses import DataAddress
 from moonraker.websocket_interface import WebsocketInterface
 
-class ExtruderTemperatureToLowMask(Mask):
+class ExtruderTemperatureTooLowMask(Mask):
 
     
     def __init__(self, com_interface: SerialCommunication, web_socket : WebsocketInterface) -> None:

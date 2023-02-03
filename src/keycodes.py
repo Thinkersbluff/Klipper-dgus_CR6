@@ -14,6 +14,9 @@
  # You should have received a copy of the GNU General Public License 
  # along with this program. If not, see <http://www.gnu.org/licenses/>.
  #
+ # This file enumerates the DWIN_SET addresses assigned to hold the last commanded value of the named control
+ # The equivalent button in the DWIN_SET file must have this same address set as their VP#
+
 
 from enum import IntEnum
 
@@ -39,9 +42,11 @@ class KeyCodes(IntEnum):
     RESTART = 0x0024
 
     Z_TILT = 0x0025
+  
     USER_POS1 = 0x0026
     USER_POS2 = 0x0027
 
     RESUME_PRINT = 0x0028
     PAUSE_PRINT = 0x0029
-    CANCEL_PRINT = 0x0030
+   
+    CANCEL_PRINT = 0xFFFF

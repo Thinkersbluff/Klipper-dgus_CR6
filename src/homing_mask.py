@@ -24,7 +24,7 @@ from moonraker.websocket_interface import WebsocketInterface
 from controls.moonraker_text_variable import MoonrakerTextVariable, TextVariable
 from data_addresses import DataAddress
 
-class HomeingDisplayMask(Mask):
+class HomingDisplayMask(Mask):
     
     web_socket : WebsocketInterface = None
 
@@ -33,7 +33,9 @@ class HomeingDisplayMask(Mask):
     def __init__(self, mask_no, com_interface: SerialCommunication, web_sock : WebsocketInterface) -> None:
         super().__init__(mask_no, com_interface)
         self.web_socket = web_sock
-
+        # This code uses the homed_axes parameter from Moonraker to display a string naming each homed axis as it is homed
+        # I did not value this display, so I removed it from my CR6 DWIN_SET interface.  
+        # I left the code here in case others wish to add it back
         self.homed_axes = MoonrakerTextVariable(com_interface, DataAddress.HOMED_AXES, DataAddress.UNDEFINED, 9, web_sock)
         self.controls.append(self.homed_axes)
         self.homed_axes.set_klipper_data(["toolhead", "homed_axes"])
