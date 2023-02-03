@@ -41,11 +41,11 @@ class WebsocketInterface(JsonSerializable):
     open : bool = False
     printer_ip = "1.2.3.4"
     port = 7125
-    json_data_modell = {}
+    json_data_model = {}
     server_info = {}
     cyclic_query_thread_running = False
 
-    json_resouce_lock = Lock()
+    json_resource_lock = Lock()
 
     _requests : Queue = Queue()
     _current_request : MoonrakerRequest = None
@@ -191,22 +191,22 @@ class WebsocketInterface(JsonSerializable):
         self.start()
 
     def ws_on_error(self, ws_app, error):
-        self._logger.critical("Websockt Error %s: %s", ws_app, error)
+        self._logger.critical("Websocket Error %s: %s", ws_app, error)
 
     def ws_on_message(self, ws_app, msg):
         response = json.loads(msg)
         #print(json.dumps(response, indent=3))
-        #global json_data_modell
+        #global json_data_model
 
         if 'id' in response:
             # Response to our query data request 
             if response["id"] == WebsocktRequestId.QUERY_PRINTER_OBJECTS:
                 #print(json.dumps(response, indent=2))
-                with self.json_resouce_lock:
-                    json_merged = merge(self.json_data_modell, response["result"]["status"])
-                    self.json_data_modell = json_merged
+                with self.json_resource_lock:
+                    json_merged = merge(self.json_data_model, response["result"]["status"])
+                    self.json_data_model = json_merged
 
-                #print(json.dumps(self.json_data_modell, indent=3))
+                #print(json.dumps(self.json_data_model, indent=3))
             
                 self.add_subscription(ws_app)
 
@@ -214,9 +214,9 @@ class WebsocketInterface(JsonSerializable):
                 #print(json.dumps(response, indent=3))
 
                 #self.server_info = response["resut"]
-                with self.json_resouce_lock:
-                    json_merged = merge(self.json_data_modell["server_info"], response["result"] )
-                    self.json_data_modell["server_info"] = json_merged
+                with self.json_resource_lock:
+                    json_merged = merge(self.json_data_model["server_info"], response["result"] )
+                    self.json_data_model["server_info"] = json_merged
 
                     #print(json.dumps(response, indent=3))
 
@@ -249,17 +249,17 @@ class WebsocketInterface(JsonSerializable):
                 #print(json.dumps(response, indent=3))
                 #TODO: Resource locking - possible data race!
                 json_pub_data = response["params"][0]
-                json_merged = merge(self.json_data_modell, json_pub_data)
-                with self.json_resouce_lock:
+                json_merged = merge(self.json_data_model, json_pub_data)
+                with self.json_resource_lock:
                     printer_state_string = str(json_merged["print_stats"]["state"])
                     read_printer_state = PrinterState.get_state_for_string(printer_state_string)
                     if self._printer_state != read_printer_state:
                         self._set_printer_state(read_printer_state)
-                    self.json_data_modell = json_merged
+                    self.json_data_model = json_merged
 
 
                     
-                #print(json.dumps(self.json_data_modell["toolhead"]["homed_axes"], indent=3))
+                #print(json.dumps(self.json_data_model["toolhead"]["homed_axes"], indent=3))
                 #print(json.dumps(json_merged, indent=2))
 
 
@@ -318,8 +318,8 @@ class WebsocketInterface(JsonSerializable):
 
 
     def get_klipper_data(self, klipper_data : list, array_index : int = -1):
-        with self.json_resouce_lock:
-            json_obj = self.json_data_modell
+        with self.json_resource_lock:
+            json_obj = self.json_data_model
             for dp in klipper_data:
                 json_obj = json_obj.get(dp)
                 if json_obj is None:
@@ -357,14 +357,14 @@ class WebsocketInterface(JsonSerializable):
             print("Malformed JSON: Missing 'printer_objects' entry!")
             return False
 
-        data_modell_object = websocket_object.get("data_model")
-        if data_modell_object is None:
+        data_model_object = websocket_object.get("data_model")
+        if data_model_object is None:
             print("Malformed JSON: Missing 'data_model' entry!")
             return False
 
         self.query_req["params"]["objects"] = printer_objects_object
         self.subscription_request["params"]["objects"] = printer_objects_object
-        self.json_data_modell = data_modell_object
+        self.json_data_model = data_model_object
 
         self.printer_ip = ip_object
         self.port = port_object
@@ -379,7 +379,7 @@ class WebsocketInterface(JsonSerializable):
                 "ip" : self.printer_ip,
                 "port" : self.port,
                 "printer_objects" : self.query_req["params"]["objects"],
-                "data_model" : self.json_data_modell
+                "data_model" : self.json_data_model
             }
         }
 
