@@ -3,7 +3,7 @@ from enum import IntEnum
 
 class PrinterState(IntEnum):
     UNKNOWN = -1,
-    STANDBYE = 0,
+    STANDBY = 0,
     PRINTING = 1
     PAUSED = 2,
     COMPLETE = 3,
@@ -15,7 +15,7 @@ class PrinterState(IntEnum):
     def get_state_for_string(state : str):
         
         if state == "standby":
-            return PrinterState.STANDBYE
+            return PrinterState.STANDBY
 
         if state == "printing":
             return PrinterState.PRINTING

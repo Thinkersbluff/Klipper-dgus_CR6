@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class KlippyState(Enum):
-    UNKOWN = 0,
+    UNKNOWN = 0,
     READY = 1,
     ERROR = 2,
     SHUTDOWN = 3,

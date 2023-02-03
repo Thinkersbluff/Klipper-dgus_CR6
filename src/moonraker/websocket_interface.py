@@ -52,7 +52,7 @@ class WebsocketInterface(JsonSerializable):
 
     _logger = logging.getLogger(__name__)
 
-    _klippy_state : KlippyState = KlippyState.UNKOWN
+    _klippy_state : KlippyState = KlippyState.UNKNOWN
     _klippy_state_text : str = ""
     _klippy_event_changed_callbacks = []
 
