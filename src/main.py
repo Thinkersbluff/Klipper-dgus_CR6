@@ -69,13 +69,13 @@ def emergency_stop_pressed(response : bytes):
 
     if keycode == 0xFFFF:
         #TODO: define ID in request_id.py
-        emergeny_stop_rpc_cmd = {
+        emergency_stop_rpc_cmd = {
             "jsonrpc": "2.0",
             "method": "printer.emergency_stop",
             "id": 4564
         }
         global websock
-        websock.ws_app.send(json.dumps(emergeny_stop_rpc_cmd))
+        websock.ws_app.send(json.dumps(emergency_stop_rpc_cmd))
  
 
 if __name__ == "__main__":
