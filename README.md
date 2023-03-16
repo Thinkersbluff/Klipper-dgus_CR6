@@ -31,11 +31,11 @@ At the time I first created this fork (Nov 2022):
      - I continued also running KlipperScreen and Mainsail, to access controls and data still not available on the CR6 display
 
 2. My second goal was to use the ported display screens while printing on my CR6-SE, comparing the functionality with that of KlipperScreen and of the CR6Community Firmware, and noting any "user experience" issues that I have with the current system.
-   - I achieved this goal within that month.
+   - I achieved this goal in Nov 2022.
  
 3. My third goal was to understand the existing python-dgus library and klipper-dgus software architecture well enough to be able to modify and extend the functionality of the DWIN display screens in ways that remain consistent and compatible with the python-dgus library.
     - In Nov/Dec 2022, I was able to edit existing functions, but I did not learn how to extend the UI with new functions of my own.
-    - I then moved over to the DGUS-Reloaded for CR-6 project and suspended my activities here.
+    - I then moved over to [the DGUS-Reloaded for CR-6 project](https://github.com/Thinkersbluff/DGUS-Reloaded_for_CR6-DWIN-SET_Component) and suspended my activities here.
   
 4. My fourth goal was to collaborate with Sebastian, when extending and/or deviating from his klipper-dgus design, to remain consistent and compatible with his python-dgus library (which is partly structured around the implemented structure and functionality of his klipper-dgus display screens)
     - That goal remains aspirational, but I have focused all of my activities to-date on the DGUS-Reloaded project, since Dec 2022.
